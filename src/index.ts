@@ -8,9 +8,8 @@ AppDataSource.initialize().then(() => {
 
     app.use(express.json());
 
-    app.use(router)
+    app.use(router);
 
     app.use(errorMiddleware);
-
     return app.listen(process.env.PORT)
 });
