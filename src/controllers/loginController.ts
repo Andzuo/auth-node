@@ -24,6 +24,11 @@ export class LoginController {
             expiresIn: "30m",
         });
 
-        console.log(token);
+        const { password: _, ...userLogin } = userExists;
+
+        return res.status(200).json({
+            user: userLogin,
+            token: token,
+        });
     }
 }
